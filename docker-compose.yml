@@ -7,7 +7,7 @@ services:
       - 5432:5432
     volumes:
       - type: bind
-        source: ./postgres
+        source: ./.local/postgres
         target: /var/lib/postgresql/data
     env_file: .env
   redis:
@@ -17,5 +17,5 @@ services:
       - 6379:6379
     volumes:
       - type: bind
-        source: ./redis
+        source: ./.local/redis
         target: /data
