@@ -11,10 +11,10 @@ services:
         target: /var/lib/postgresql/data
     env_file: .env
   redis:
-    image: redis:alpine
-    command: ["redis-server", "--appendonly", "yes"]
+    image: bitnami/redis:7.0.12
     ports:
       - 6379:6379
+    env_file: .env
     volumes:
       - type: bind
         source: ./.local/redis
